@@ -7,8 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="user/show">register</a>
-    <a href="user/show">login</a>
+    <a href="user/create">register</a>
 
 </body>
 </html>
