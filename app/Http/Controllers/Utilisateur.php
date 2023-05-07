@@ -13,7 +13,7 @@ class Utilisateur extends Controller
      */
     public function index()
     {
-        //
+        return view('app_index');
     }
 
     /**
@@ -23,7 +23,8 @@ class Utilisateur extends Controller
      */
     public function create()
     {
-        //
+        return view('createUser');
+
     }
 
     /**

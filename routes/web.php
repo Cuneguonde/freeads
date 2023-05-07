@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[IndexController::class, 'showIndex']);
-Route::resource('users', Utilisateur::class);
+Route::resource('user', Utilisateur::class);
