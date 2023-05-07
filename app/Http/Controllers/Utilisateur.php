@@ -24,7 +24,6 @@ class Utilisateur extends Controller
     public function create()
     {
         return view('createUser');
-
     }
 
     /**
@@ -35,8 +34,17 @@ class Utilisateur extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        return view('home');
+/*         $request->validate([
+
+            'user_mail' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+
+        ]);
+$data = $request->all();
+$check = $this->create($data);
+return redirect("index")->withSuccess('Great! You have Successfully loggedin'); */
+    } 
 
     /**
      * Display the specified resource.

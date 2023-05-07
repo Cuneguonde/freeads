@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[IndexController::class, 'showIndex']);
+Route::post('register', [Utilisateur::class, 'store']);
 Route::resource('user', Utilisateur::class);

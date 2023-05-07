@@ -12,6 +12,6 @@
     <a href="user/create">Register</a>
     <br>
     <a href="user/show">login::OBSOLETE</a>
-
+    @yield('content')
 </body>
 </html>

@@ -13,9 +13,7 @@ class Users extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('users')) {
-            // The "users" table exists...
-        } else{
+
         Schema::create('users', function (Blueprint $table) {
             $table->primary('id');
             $table->string('email')->unique();
@@ -25,7 +23,7 @@ class Users extends Migration
             $table->timestamps();   
         });
     }
-}
+
 
     /**
      * Reverse the migrations.
