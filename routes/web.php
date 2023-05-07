@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Utilisateur;
+use App\Models\Annonce;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +19,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[IndexController::class, 'showIndex']);
-Route::post('register', [Utilisateur::class, 'store']);
+Route::get('/',function () {
+return view('register');
+});/* [IndexController::class, 'showIndex'] */
+//Route::post('register', [Utilisateur::class, 'store']);
+Route::post('/annonce', function (Request $request) {
+/*     $validator = Validator::make($request->all(), [
+        'email' => 'required|max:255',
+    ]);
+ 
+    if ($validator->fails()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    } */
+    $task = new Annonce;
+    $task->name = $request->name;
+    $task->save();
+ 
+    return redirect('/');
+    // Create The Task...
+});
 Route::resource('user', Utilisateur::class);
